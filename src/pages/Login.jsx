@@ -1,5 +1,5 @@
 import { Button, Form, Input } from 'antd'
-import 'antd/dist/antd.min.css'
+// import 'antd/dist/antd.min.css'
 import './pages.css'
 import styled from 'styled-components'
 
