@@ -13,6 +13,12 @@ export const PUBLIC_ROUTER = [
     exact: true
   },
   {
+    key: "homeChildren",
+    path: '/:type',
+    element: <Home />,
+    exact: true
+  },
+  {
     key: 'AccountInfo',
     path: '/AccountInfo',
     element: <AccountInfo />,

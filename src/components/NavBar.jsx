@@ -1,12 +1,11 @@
 import styled from 'styled-components'
-import { useContext } from 'react'
 import { Form, Input } from 'antd'
 import logo from '../images/logo1.jpg'
 import './components.css'
-import ReaderMenu from './ReaderMenu'
-import GuestMenu from './GuestMenu'
-import LibrarianMenu from './LibrarianMenu'
-import { Context } from '../hooks/Context'
+
+import LibrarianMenu from './Menu/LibrarianMenu'
+import GuestMenu from './Menu/GuestMenu'
+import ReaderMenu from './Menu/ReaderMenu'
 
 const NavBarStyle = styled.div`
   display: flex;
@@ -16,11 +15,11 @@ const NavBarStyle = styled.div`
 `
 
 function NavBar() {
-  const context = useContext(Context)
+  const role = localStorage.getItem('role')
 
   return (
     <NavBarStyle>
-      { context.role === 0 ? <GuestMenu /> : context.role === 1 ? <ReaderMenu /> : <LibrarianMenu /> }
+      { role === null ? <GuestMenu /> : role === 1 ? <ReaderMenu /> : <LibrarianMenu /> }
       <div className='search-box' >
         <Form.Item className='search-box' style={{ width: '100%' }}>
           <Input.Search placeholder="Tìm kiếm" size='large' enterButton />

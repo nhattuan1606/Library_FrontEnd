@@ -7,14 +7,19 @@
 }
 
 .login-box {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   width: 360px;
-  height: 360px;
+  height: 400px;
   margin: auto auto auto 140px;
   background-color: rgba(234, 232, 174, 0.8);
   border: 3px solid black;
   border-radius: 10px;
+}
+
+.logo {
+  margin: 20px 35%;
+  width: 30%;
 }
 
 /* Tablet: width: 481px ~ 30.0625em to 768px ~ 48em */

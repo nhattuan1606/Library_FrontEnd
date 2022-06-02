@@ -1,19 +1,18 @@
-import { useEffect, useContext } from "react"
-import { Context } from '../hooks/Context'
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 function AccountInfo() {
-  const context = useContext(Context)
   const navigate = useNavigate()
+  const role = localStorage.getItem('role')
 
   useEffect(() => {
-    if (context.role === 0) {
+    if (role === null) {
       navigate('/')
     }
   })
 
   return (
-    <div>AccountInfo</div>
+    <div>AccountInfo abcdef</div>
   )
 }
 

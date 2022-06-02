@@ -1,13 +1,12 @@
-import { useEffect, useContext } from "react"
-import { Context } from '../../hooks/Context'
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 function Cart() {
-  const context = useContext(Context)
   const navigate = useNavigate()
+  const role = localStorage.getItem('role')
 
   useEffect(() => {
-    if (context.role === 0 || context.role === 2) {
+    if (role === null || role === 2) {
       navigate('/')
     }
   })

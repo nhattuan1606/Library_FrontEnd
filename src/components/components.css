@@ -1,5 +1,5 @@
 .search-box {
-  margin-left: 18%;
+  margin-left: 12%;
   margin-top: 4px;
   width: 60%;
 }
@@ -11,6 +11,7 @@
   }
 }
 
+/* Tablet: width: 481px ~ 30.0625em to 768px ~ 48em */
 @media only screen and (min-width: 30.0625em) and (max-width: 48em) {
   .search-box {
     width: 50%;

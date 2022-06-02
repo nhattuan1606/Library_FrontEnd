@@ -8,11 +8,10 @@ import {
   LogoutOutlined,
   IdcardOutlined,
   HomeOutlined,
-  AuditOutlined,
+  ShoppingOutlined,
   ReadOutlined,
-  SolutionOutlined
+  FileDoneOutlined
 } from '@ant-design/icons'
-
 
 const MenuBox = styled.div`
   width: 200px;
@@ -23,11 +22,15 @@ const MenuBox = styled.div`
 
 const { SubMenu } = Menu
 
-function LibrarianMenu() {
+function ReaderMenu() {
   const [ hideMenu, setHideMenu ] = useState(true)
 
   const handleOpenMenu = () => {
     setHideMenu(prev => !prev)
+  }
+
+  const handleSignOut = () => {
+    localStorage.removeItem('role')
   }
 
   return (
@@ -49,15 +52,15 @@ function LibrarianMenu() {
         <Menu.Item key='/' icon={<HomeOutlined />} >
           <Link to="/" >Trang chủ</Link>
         </Menu.Item>
-        <Menu.Item key='/AccountInfo' icon={<IdcardOutlined />} >
+        <Menu.Item key='/AccountInfo' icon={<IdcardOutlined />} onClick={handleSignOut}>
           <Link to="/AccountInfo" >Thông tin tài khoản</Link>
         </Menu.Item>
-        <SubMenu key='sub2' icon={<AuditOutlined />} title='Quản lý'>
-          <Menu.Item key='/BookTitle' icon={<ReadOutlined />} >
-            <Link to='/BookTitle' >Quản lí đầu sách</Link>
+        <SubMenu key='sub2' icon={<ReadOutlined />} title='Sách'>
+          <Menu.Item key='/Cart' icon={<ShoppingOutlined />} >
+            <Link to='/Cart' >Giỏ sách</Link>
           </Menu.Item>
-          <Menu.Item key='/ReaderAccount' icon={<SolutionOutlined />} >
-            <Link to='/ReaderAccount' >Quản lí độc giả</Link>
+          <Menu.Item key='/History' icon={<FileDoneOutlined />} >
+            <Link to='/History' >Lịch sử mượn</Link>
           </Menu.Item>
         </SubMenu>
         <Menu.Item key='5' icon={<LogoutOutlined />} >
@@ -68,4 +71,4 @@ function LibrarianMenu() {
   )
 }
 
-export default LibrarianMenu
+export default ReaderMenu
